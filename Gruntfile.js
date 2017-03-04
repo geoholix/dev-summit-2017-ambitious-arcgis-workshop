@@ -106,7 +106,7 @@ module.exports = function(grunt) {
 				'css/**',
 				'js/**',
 				'lib/**',
-				'images/**',
+				'img/**',
 				'plugin/**',
 				'**.md'
 			]
@@ -137,7 +137,15 @@ module.exports = function(grunt) {
 		},
 
     'gh-pages': {
-      src: ['**']
+      src: [
+				'index.html',
+				'css/**',
+				'js/**',
+				'lib/**',
+				'img/**',
+				'plugin/**',
+				'**.md'
+			]
     }
 
 	});
