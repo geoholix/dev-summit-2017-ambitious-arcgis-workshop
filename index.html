@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Ember Addons - Building Ambitious Applications Integrated with ArcGIS Online/Portal</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/esri-dev-summit-2016.css" id="theme">
+    <link rel="stylesheet" href="css/tom-reveal.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/solarized_dark.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section data-background="img/title.png" data-background-size="cover">
+          <h2>Building Ambitious Applications Integrated with ArcGIS Online/Portal</h2>
+          <h3>Ember Addons</h3>
+          <p>
+            <small><a href="https://github.com/tomwayson">Tom Wayson</a> :: Washington DC R&amp;D Center</small>
+          </p>
+        </section>
+
+        <section data-background="img/web.ns_.studentgamers.JHu_.DA_-640x519.jpg">
+          <h4>Other people's code</h4>
+        </section>
+
+        <section data-background="img/fast-sport-car-1466168836N0A.jpg">
+          <h4>Turbocharge your development?</h4>
+        </section>
+
+<!--
+        <section data-background="img/old-725346_1920.jpg">
+          <h4>More trouble than it's worth?</h4>
+        </section>
+-->
+        <section data-background="img/rusted-1246518_1920.jpg">
+          <h4>More trouble than it's worth?</h4>
+        </section>
+
+        <section data-background="img/rusted-1817343_1920.jpg">
+          <h4>Total disaster?</h4>
+        </section>
+
+        <section>
+          <h3>Example:</h3>
+          <a href="https://www.google.com/search?q=angular2+bootstrap&oq=angular2+bootstrap" target="_blank">
+            <img src="img/angular.png" class="transparent" height="320" />
+            <img src="img/icon-bootstrap.png" class="transparent" height="300" />
+          </a>
+					<p>Add bootstrap to Angular2</p>
+        </section>
+
+        <section data-background-color="#faf4f1" class="ember-brand">
+          <h3>Example:</h3>
+          <a href="https://emberobserver.com/" target="_blank">
+            <img src="img/tomster-sm.png" class="transparent" height="300" />
+            <img src="img/icon-bootstrap.png" class="transparent" height="300" />
+          </a>
+					<p>Add bootstrap to Ember</p>
+        </section>
+
+        <section data-background-color="#faf4f1" class="ember-brand">
+          <h3>Ember Addons</h3>
+          <a href="https://ember-cli.com/extending/" target="_blank">
+            <img src="img/Ember CLI on Light.png" class="transparent" />
+          </a>
+          <p>A plugin system for <a href="https://ember-cli.com/extending/" target="_blank">ember-cli</a></p>
+        </section>
+
+        <section data-background="img/1280px-Tesla_auto_bots.jpg">
+          <h4 class="fragment current-visible">Automate install and build steps</h4>
+					<h4 class="fragment current-visible"><code>ember install some-addon</code></h4>
+        </section>
+
+        <section data-background="img/17517769750_2757bafdf9_k.jpg">
+          <h4 class="fragment current-visible"><code>ember addon my-new-addon</code></h4>
+          <h4 class="fragment current-visible">Scaffold addon and dummy app</h4>
+          <h4 class="fragment current-visible">Good <a href="https://ember-cli.com/extending/">documentation</a></h4>
+        </section>
+
+        <section data-background="img/release-tomsters.png" data-background-color="#faf4f1" class="ember-brand">
+					<h4>Run tests in many ember versions</h4>
+        </section>
+
+				<section data-background-color="#faf4f1" class="ember-brand">
+          <h3>Over a dozen <a href="https://emberobserver.com/?query=arcgis" target="_blank">ArcGIS addons</a></h3>
+          <a href="https://emberobserver.com/?query=arcgis" target="_blank">
+            <img src="img/tomster-sm.png" class="transparent" height="300" />
+            <img src="img/esri.png" class="transparent" height="300" />
+          </a>
+        </section>
+
+				<section data-background="img/Backlit_keyboard.jpg">
+					<h4>Let's <a href="https://github.com/tomwayson/ambitious-arcgis-app/blob/master/workshop/3-addons.md" target="_blank">add some addons!</a></h4>
+				</section>
+
+
+        <section data-background="img/end.png" data-background-size="cover"></section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
