@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="css/theme/esri-dev-summit-2016.css" id="theme">
     <link rel="stylesheet" href="css/tom-reveal.css">
 
+		<style>
+		.after-dom-hook {
+			color: orange;
+		}
+		</style>
+
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/solarized_dark.css">
 
@@ -85,6 +91,8 @@
           <h4><img src="img/esri.png" class="transparent" width="80" style="vertical-align: middle" /> 3D, smart mapping, web maps</h4>
         </section>
 
+				<!-- <a href="https://github.com/Esri/esri-leaflet/wiki/FAQ#will-esri-leaflet-replace-the-arcgis-api-for-javascript" target="_blank">esri-leaflet FAQ</a> -->
+
         <section data-background="img/phone-16981803257_4bcd3c45dc_z.jpg">
           <h4><img src="img/leaflet-logo.png" class="transparent" width="80" style="vertical-align: middle" /> Lightweight / mobile friendly</h4>
         </section>
@@ -147,21 +155,71 @@
 						<img src="img/redux-logo.svg" class="transparent" height="120" />
           </div>
 					<p><code>import Map from 'esri/map';</code></p>
+					<p class="fragment"><em>becomes</em> <code>require(['esri/Map'],(Map)=>{...})</code></p>
         </section>
-
-        <!--
-        <section data-background="img/shrug-2799746255_436723e65c_z.jpg">
-          <h4>Still undecided? <a href="https://github.com/Esri/esri-leaflet/wiki/FAQ#will-esri-leaflet-replace-the-arcgis-api-for-javascript" target="_blank">esri-leaflet FAQ</a></h4>
-        </section>
-        -->
 
         <section data-background="img/no-phone-16981803257_4bcd3c45dc_z.png">
           <h4><img src="img/tomster-sm.png" class="transparent" width="80" style="vertical-align: middle" />+<img src="img/esri.png" class="transparent" width="80" style="vertical-align: middle" /> = not 1st choice for mobile</h4>
         </section>
 
+				<section data-background="img/shrug-2799746255_436723e65c_z.jpg">
+          <h4>Which is right for <a href="http://ambitious-arcgis-app-tom.surge.sh/items?q=ski">our use case</a>?</h4>
+        </section>
+
         <section data-background="img/Backlit_keyboard.jpg">
           <h4>Let's <a href="https://github.com/tomwayson/ambitious-arcgis-app/blob/master/workshop/5-maps.md" target="_blank">make a map!</a></h4>
         </section>
+
+				<section>
+          <h3>Framework component lifecyles</h4>
+					<div class="clearfix">
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://dojotoolkit.org/reference-guide/1.10/dijit/_WidgetBase.html" target="_blank">Dojo (dijit)</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li><code>buildRendering()</code></li>
+								<li class="after-dom-hook"><code>postCreate()</code></li>
+								<li><code>startup()</code></li>
+								<li><code>destroy()</code></li>
+							</ul>
+						</div>
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">React</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li><code>componentWillMount()</code></li>
+								<li><code>render()</code></li>
+								<li class="after-dom-hook"><code>componentDidMount()</code></li>
+								<li><code>componentDidUpdate()</code></li>
+								<li><code>componentWillUnmount()</code></li>
+							</ul>
+						</div>
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html" target="_blank">Angular</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li class="after-dom-hook"><code>ngOnInit()</code></li>
+								<li><code>ngOnChanges()</code></li>
+								<li><code>ngOnDestroy()</code></li>
+							</ul>
+						</div>
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://guides.emberjs.com/v2.11.0/components/the-component-lifecycle/" target="_blank">Ember</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li><code>init()</code></li>
+								<li><code>didReceiveAttrs()</code></li>
+								<li class="after-dom-hook"><code>didInsertElement()</code></li>
+								<li><code>didUpdateAttrs()</code></li>
+								<li><code>willDestroyElement()</code></li>
+							</ul>
+						</div>
+					</div>
+        </section>
+
+				<section data-background="img/Backlit_keyboard.jpg">
+					<h4>Let's <a href="https://github.com/tomwayson/ambitious-arcgis-app/blob/master/workshop/5-maps.md#showing-item-extents-on-the-map" target="_blank">show extents on the map!</a></h4>
+				</section>
 
         <section data-background="img/end.png" data-background-size="cover"></section>
 
