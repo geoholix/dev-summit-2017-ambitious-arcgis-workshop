@@ -139,6 +139,8 @@ module.exports = function(grunt) {
     'gh-pages': {
       src: [
 				'index.html',
+				'addons.html',
+				'maps.html',
 				'css/**',
 				'js/**',
 				'lib/**',
