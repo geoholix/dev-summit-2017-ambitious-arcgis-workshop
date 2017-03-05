@@ -26,6 +26,10 @@
   text-shadow: none;
 }
 
+.reveal .light-background h4 a {
+  color: #77cfeb;
+}
+
 /* overlay content */
 .reveal .slim-shady {
     background: rgba(0,0,0,0.5);
