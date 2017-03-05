@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Maps - Building Ambitious Applications Integrated with ArcGIS Online/Portal</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/esri-dev-summit-2016.css" id="theme">
+    <link rel="stylesheet" href="css/tom-reveal.css">
+
+		<style>
+		.after-dom-hook {
+			color: orange;
+		}
+		</style>
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/solarized_dark.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section data-background="img/title.png" data-background-size="cover">
+          <h2>Building Ambitious Applications Integrated with ArcGIS Online/Portal</h2>
+          <h3>Maps</h3>
+          <p>
+            <small><a href="https://github.com/tomwayson">Tom Wayson</a> :: Washington DC R&amp;D Center</small>
+          </p>
+        </section>
+
+        <section>
+          <h3>Follow Along</h3>
+          <p>
+            <a href="http://tomwayson.github.io/dev-summit-2017-ambitious-arcgis-workshop/maps.html" target="_blank">tomwayson.github.io/dev-summit-2017-ambitious-arcgis-workshop/maps.html</a>
+          </p>
+          <p>
+            <a href="https://github.com/tomwayson/dev-summit-2017-ambitious-arcgis-workshop/" target="_blank">@tomwayson/dev-summit-2017-ambitious-arcgis-workshop</a>
+          </p>
+        </section>
+
+        <section>
+          <h3>Esri's 2 JavaScript mapping libraries</h3>
+          <div class="clearfix">
+            <div class="left">
+              <a href="https://developers.arcgis.com/javascript/" target="_blank" style="color: #373288">
+                <div><img src="img/esri.png" class="transparent" height="200" style="vertical-align: middle" /></div>
+                <span>ArcGIS API for JavaScript</span>
+              </a>
+            </div>
+            <div class="right">
+              <a href="http://esri.github.io/esri-leaflet/" target="_blank" style="color: #949494">
+                <div><img src="img/leaflet-logo.png" class="transparent" height="200" style="vertical-align: middle" /></div>
+                <span>esri-leaflet</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="img/shrug-2799746255_436723e65c_z.jpg">
+          <h4>Which should you use?</h4>
+        </section>
+
+        <section data-background="img/homepage-banner-sample.png" data-background-size="759px" data-background-color="#373288">
+          <h4><img src="img/esri.png" class="transparent" width="80" style="vertical-align: middle" /> 3D, smart mapping, web maps</h4>
+        </section>
+
+				<!-- <a href="https://github.com/Esri/esri-leaflet/wiki/FAQ#will-esri-leaflet-replace-the-arcgis-api-for-javascript" target="_blank">esri-leaflet FAQ</a> -->
+
+        <section data-background="img/phone-16981803257_4bcd3c45dc_z.jpg">
+          <h4><img src="img/leaflet-logo.png" class="transparent" width="80" style="vertical-align: middle" /> Lightweight / mobile friendly</h4>
+        </section>
+
+        <section>
+          <h3>esri-leaflet: framework friendly</h4>
+          <div>
+            <img src="img/leaflet-logo.png" class="transparent" height="200" />
+            <img src="img/Heart_corazon.svg" class="transparent" height="200" />
+            <img src="img/angular.png" class="transparent" height="200" />
+            <img src="img/tomster-sm.png" class="transparent" height="200" />
+          </div>
+        </section>
+
+        <section>
+          <h3>ArcGIS: challenge to load modules</h4>
+          <div>
+            <img src="img/esri.png" class="transparent" height="200" />
+            <img src="img/Broken_heart.svg" class="transparent" height="180" />
+            <img src="img/angular.png" class="transparent" height="200" />
+            <img src="img/tomster-sm.png" class="transparent" height="200" />
+          </div>
+					<p class="fragment"><code style="text-decoration: line-through">import Map from 'esri/map';</code></p>
+        </section>
+
+				<section data-background="img/module-loader-graffiti2.jpg">
+        </section>
+
+				<section>
+          <h3><a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-frameworks-react/index.html">4.x Samples</a> show framework <em>components</em> in ArcGIS apps</h3>
+          <div>
+						<img src="img/esri.png" class="transparent" height="200" />
+            <img src="img/Heart_corazon.svg" class="transparent" height="200" />
+						<a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-frameworks-react/index.html" target="_blank"><img src="img/react-js-img.png" class="transparent" height="200" /></a>
+            <a href="https://developers.arcgis.com/javascript/latest/sample-code/widgets-frameworks-vue/index.html" target="_blank"><img src="img/vue-logo.png" class="transparent" width="200" /></a>
+          </div>
+					<p><code>require(['vue','esri/Map'],(Vue, Map)=>{...})</code></p>
+        </section>
+
+				<section>
+          <h3>ArcGIS map in a React app?</h4>
+          <div>
+            <img src="img/esri.png" class="transparent" height="100" />
+            <img src="img/Broken_heart.svg" class="transparent" height="80" />
+            <img src="img/react-js-img.png" class="transparent" height="100" />
+						<img src="img/react-router-logo.png" class="transparent" width="200" />
+						<img src="img/redux-logo.svg" class="transparent" height="100" />
+          </div>
+					<p class="fragment"><code style="text-decoration: line-through">import Map from 'esri/map';</code></p>
+        </section>
+
+        <section>
+          <h3>Module loader <a href="https://github.com/Esri/jsapi-resources/tree/master/frameworks" target="_blank">helper libraries</a></h4>
+          <div>
+            <img src="img/esri.png" class="transparent" height="120" />
+            <img src="img/Broken_Love_Heart_bandaged_2_nevit.svg" class="transparent" height="100" />
+            <img src="img/angular.png" class="transparent" height="120" />
+            <img src="img/tomster-sm.png" class="transparent" height="120" />
+            <img src="img/react-js-img.png" class="transparent" height="120" />
+						<img src="img/redux-logo.svg" class="transparent" height="120" />
+          </div>
+					<p><code>import Map from 'esri/map';</code></p>
+					<p class="fragment"><em>becomes</em> <code>require(['esri/Map'],(Map)=>{...})</code></p>
+        </section>
+
+        <section data-background="img/no-phone-16981803257_4bcd3c45dc_z.png">
+          <h4><img src="img/tomster-sm.png" class="transparent" width="80" style="vertical-align: middle" />+<img src="img/esri.png" class="transparent" width="80" style="vertical-align: middle" /> = not 1st choice for mobile</h4>
+        </section>
+
+				<section data-background="img/shrug-2799746255_436723e65c_z.jpg">
+          <h4>Which is right for <a href="http://ambitious-arcgis-app-tom.surge.sh/items?q=ski">our use case</a>?</h4>
+        </section>
+
+				<section>
+          <h3>We'll use <a href="https://github.com/Esri/ember-cli-amd" target="_blank">ember-cli-amd</a></h4>
+          <div>
+            <img src="img/esri.png" class="transparent" height="200" />
+						<img src="img/Broken_Love_Heart_bandaged_2_nevit.svg" class="transparent" height="200" />
+            <img src="img/tomster-sm.png" class="transparent" height="200" />
+          </div>
+        </section>
+
+        <section data-background="img/Backlit_keyboard.jpg">
+          <h4>Let's <a href="https://github.com/tomwayson/ambitious-arcgis-app/blob/master/workshop/5-maps.md" target="_blank">make a map!</a></h4>
+        </section>
+
+				<section>
+          <h3>Framework component lifecyles</h4>
+					<div class="clearfix">
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://dojotoolkit.org/reference-guide/1.10/dijit/_WidgetBase.html" target="_blank">Dojo (dijit)</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li><code>buildRendering()</code></li>
+								<li class="after-dom-hook"><code>postCreate()</code></li>
+								<li><code>startup()</code></li>
+								<li><code>destroy()</code></li>
+							</ul>
+						</div>
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">React</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li><code>componentWillMount()</code></li>
+								<li><code>render()</code></li>
+								<li class="after-dom-hook"><code>componentDidMount()</code></li>
+								<li><code>componentDidUpdate()</code></li>
+								<li><code>componentWillUnmount()</code></li>
+							</ul>
+						</div>
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html" target="_blank">Angular</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li class="after-dom-hook"><code>ngOnInit()</code></li>
+								<li><code>ngOnChanges()</code></li>
+								<li><code>ngOnDestroy()</code></li>
+							</ul>
+						</div>
+						<div class="left" style="width: 25%">
+							<p><strong><a href="https://guides.emberjs.com/v2.11.0/components/the-component-lifecycle/" target="_blank">Ember</a></strong></p>
+							<ul style="font-size: .5em">
+								<li><code>constructor()</code></li>
+								<li><code>init()</code></li>
+								<li><code>didReceiveAttrs()</code></li>
+								<li class="after-dom-hook"><code>didInsertElement()</code></li>
+								<li><code>didUpdateAttrs()</code></li>
+								<li><code>willDestroyElement()</code></li>
+							</ul>
+						</div>
+					</div>
+        </section>
+
+				<section data-background="img/Backlit_keyboard.jpg">
+					<h4>Let's <a href="https://github.com/tomwayson/ambitious-arcgis-app/blob/master/workshop/5-maps.md#showing-item-extents-on-the-map" target="_blank">show extents on the map!</a></h4>
+				</section>
+
+				<section data-background="img/open-data-screenshot.png" class="light-background">
+					<h4><a href="http://opendata.arcgis.com/datasets?q=parcels" target="_blank">Open Data</a> uses same patterns</h3>
+				</section>
+
+				<section>
+					<h3>Similar app built w/ <a href="http://www.ember-leaflet.com/" target="_blank">ember-leaflet</a></h4>
+					<div>
+						<img src="img/leaflet-logo.png" class="transparent" height="200" />
+						<img src="img/Heart_corazon.svg" class="transparent" height="200" />
+						<img src="img/tomster-sm.png" class="transparent" height="200" />
+					</div>
+					<p>Examle: <a href="http://open-data-gallery.surge.sh/" target="_blank">Open Data Gallery</a> (<a href="https://github.com/ArcGIS/opendata-gallery/blob/f149d2200809548facb96ae047906ee4af88862d/app/index/template.hbs#L7-L20" target="_blank">code</a>)</p>
+				</section>
+
+        <section data-background="img/end.png" data-background-size="cover"></section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
